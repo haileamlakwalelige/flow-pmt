@@ -1,27 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .gradient-title {
+    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-100 to-blue-400 bg-clip-text tracking-tighter text-transparent pr-2 pb-2;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", serif;
+}
+.dotted-background {
+  background-color: #0a111f;
+  background-image: radial-gradient(#4a5568 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px; /* For horizontal scrollbars */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background-color: #1a1a2e; /* Dark background */
+  border-radius: 10px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #0f3460; /* Dark blue */
+  border-radius: 10px;
+  border: 3px solid #1a1a2e; /* Blends with the track */
+}
+
+/* Hover effect on Thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #16213e; /* Slightly lighter blue */
 }
